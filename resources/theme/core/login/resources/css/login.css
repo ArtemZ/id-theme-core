@@ -441,15 +441,6 @@ a.zocial  {
         padding-bottom: 15px;
     }
 
-    #kc-locale {
-        position: absolute;
-        width: 200px;
-        top: 20px;
-        right: 20px;
-        text-align: right;
-        z-index: 9999;
-    }
-
     #kc-logo-wrapper {
         background-size: 100px 21px;
         height: 21px;
@@ -611,4 +602,79 @@ a.zocial  {
 
 .login-pf-page .btn-primary {
     margin-top: 0;
+}
+
+/*REGISTRATION*/
+
+.register-pf-page .card-pf {
+    border: 1px solid #adadad;
+    height: 368px;
+    border-radius: 10px;
+    padding: 22px;
+    position: relative;
+    margin-bottom: 22px;
+    max-width: 100%;
+}
+
+.register-pf-page #kc-page-title {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 11px;
+}
+
+#kc-register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#kc-register-form .form-row {
+    display: flex;
+}
+
+#kc-register-form .form-group {
+    margin-bottom: 10px;
+}
+
+#kc-register-form .form-row .form-control:first-child {
+    margin-right: 10px;
+}
+
+#kc-register-form .form-row div {
+    width: 50%;
+}
+
+#kc-register-form .form-row div:first-child {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.small-text {
+    color: #777777;
+    font-size: 7px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: Montserrat;
+    padding-top: 5px;
+}
+
+#kc-form-options a{
+    font-size: 9px;
+    font-weight: bold;
+    color: #a8c975;
+    font-family: Montserrat;
+}
+
+.register-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    right: 22px;
+}
+
+.register-footer #kc-form-buttons {
+    padding-top: 0;
 }
