@@ -14,6 +14,7 @@
     </#if>
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;display=swap" rel="stylesheet">
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
@@ -33,9 +34,6 @@
 
 <body class="${properties.kcBodyClass!}">
   <div class="${properties.kcLoginClass!}">
-    <div id="kc-header" class="${properties.kcHeaderClass!}">
-      <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
-    </div>
     <div class="${properties.kcFormCardClass!} <#if displayWide>${properties.kcFormCardAccountClass!}</#if>">
       <header class="${properties.kcFormHeaderClass!}">
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
@@ -52,7 +50,7 @@
                 </div>
             </div>
         </#if>
-        <h1 id="kc-page-title"><#nested "header"></h1>
+        <div id="kc-page-title"><#nested "header"></div>
       </header>
       <div id="kc-content">
         <div id="kc-content-wrapper">
@@ -81,6 +79,37 @@
         </div>
       </div>
 
+    </div>
+    <div class='form-footer'>
+        <div id="kc-locale">
+                <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
+                    <div class="kc-dropdown" id="kc-locale-dropdown">
+                        <a href="#" id="kc-current-locale-link">${locale.current}</a>
+                        <ul>
+                            <#list locale.supported as l>
+                                <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
+                            </#list>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="innerLinks">
+               <li>
+                   <a href="/">
+                       Help
+                   </a>
+               </li>
+               <li>
+                   <a href="/">
+                       Privacy
+                   </a>
+               </li>
+               <li>
+                   <a href="/">
+                       Terms
+                   </a>
+               </li>
+           </ul>
     </div>
   </div>
 </body>
