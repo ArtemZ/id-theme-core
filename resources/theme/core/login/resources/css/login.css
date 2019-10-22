@@ -1,6 +1,121 @@
+.login-pf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .login-pf body {
-    background: url("../img/keycloak-bg.png") no-repeat center center fixed;
-    background-size: cover;
+    background-image: none;
+    background-color: #fff;
+}
+
+.login-pf-page .card-pf {
+    border: 1px solid #adadad;
+    min-height: 368px;
+    border-radius: 10px;
+    padding: 22px;
+    position: relative;
+    margin-bottom: 19px;
+    width: 308px;
+}
+
+#kc-page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#kc-page-title h1 {
+    color: #777777;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0 0;
+    line-height: 1;
+    font-family: Montserrat;
+    text-transform: uppercase;
+}
+
+#kc-page-title p {
+    color: #777777;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+    font-family: Montserrat;
+    text-transform: uppercase;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-color: #adadad;
+    color: #adadad;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 12px;
+    height: 35px;
+    border-radius: 5px;
+    font-family: Montserrat;
+}
+
+.form-control::placeholder {
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.form-control:hover {
+    border-color: #b4d782;
+}
+.form-control:focus {
+    border-color: #b4d782;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(180, 215, 130, 0.6);
+}
+
+.greenLink {
+    display: block;
+    color: #a8c975;
+    font-size: 7px;
+    font-weight: bold;
+    font-family: Montserrat;
+    float: right;
+}
+
+.login-btn {
+    background-color: #b4d782;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    height: 34px;
+    width: 114px;
+    border: none;
+    box-shadow: none;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-footer ul {
+    justify-content: space-between;
+    list-style: none;
+    width: 40%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.form-footer ul li a {
+    color: #777777;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: Montserrat;
 }
 
 .alert-error {
@@ -14,7 +129,6 @@
     position: absolute;
     background-color: #fff;
     list-style: none;
-    right: 0;
     top: 20px;
     min-width: 100px;
     padding: 2px 0;
@@ -40,10 +154,10 @@
 }
 
 #kc-locale-dropdown a {
-    color: #4d5258;
-    background: 0 0;
-    padding: 0 15px 0 0;
-    font-weight: 300;
+    color: #777777;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight:600;
 }
 
 #kc-locale-dropdown a:hover {
@@ -53,6 +167,7 @@
 a#kc-current-locale-link {
     display: block;
     padding: 0 5px;
+    position: relative;
 }
 
 /* a#kc-current-locale-link:hover {
@@ -60,8 +175,10 @@ a#kc-current-locale-link {
 } */
 
 a#kc-current-locale-link::after {
-    content: "\2c5";
+    content: "\0023F7";
     margin-left: 4px;
+    position: absolute;
+    top: -1px;
 }
 
 .login-pf .container {
@@ -69,7 +186,7 @@ a#kc-current-locale-link::after {
 }
 
 .login-pf a:hover {
-    color: #0099d3;
+    color: #86A15B;
 }
 
 #kc-logo {
@@ -270,7 +387,6 @@ a.zocial  {
 
     #kc-locale {
         position: relative;
-        text-align: right;
         z-index: 9999;
     }
 }
@@ -325,15 +441,6 @@ a.zocial  {
         padding-bottom: 15px;
     }
 
-    #kc-locale {
-        position: absolute;
-        width: 200px;
-        top: 20px;
-        right: 20px;
-        text-align: right;
-        z-index: 9999;
-    }
-
     #kc-logo-wrapper {
         background-size: 100px 21px;
         height: 21px;
@@ -362,7 +469,64 @@ a.zocial  {
 }
 
 #kc-form-buttons {
-  margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.divider {
+    text-transform: uppercase;
+    color: #b4d782;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 22px;
+}
+
+.divider:before {
+    border-top: 1px solid #adadad;
+    content:"";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%; left: 0; right: 0; bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+
+#kc-registration {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#kc-registration h2 {
+    text-transform: uppercase;
+    color: #777777;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 30px 0 0;
+}
+
+#kc-registration span {
+    color: #777777;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#kc-registration a {
+    color: #a8c975;
 }
 
 .login-pf-page .login-pf-brand {
@@ -438,4 +602,79 @@ a.zocial  {
 
 .login-pf-page .btn-primary {
     margin-top: 0;
+}
+
+/*REGISTRATION*/
+
+.register-pf-page .card-pf {
+    border: 1px solid #adadad;
+    height: 368px;
+    border-radius: 10px;
+    padding: 22px;
+    position: relative;
+    margin-bottom: 22px;
+    max-width: 100%;
+}
+
+.register-pf-page #kc-page-title {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 11px;
+}
+
+#kc-register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#kc-register-form .form-row {
+    display: flex;
+}
+
+#kc-register-form .form-group {
+    margin-bottom: 10px;
+}
+
+#kc-register-form .form-row .form-control:first-child {
+    margin-right: 10px;
+}
+
+#kc-register-form .form-row div {
+    width: 50%;
+}
+
+#kc-register-form .form-row div:first-child {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.small-text {
+    color: #777777;
+    font-size: 7px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: Montserrat;
+    padding-top: 5px;
+}
+
+#kc-form-options a{
+    font-size: 9px;
+    font-weight: bold;
+    color: #a8c975;
+    font-family: Montserrat;
+}
+
+.register-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    right: 22px;
+}
+
+.register-footer #kc-form-buttons {
+    padding-top: 0;
 }

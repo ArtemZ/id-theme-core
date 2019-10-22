@@ -32,9 +32,9 @@
     </#if>
 </head>
 
-<body class="${properties.kcBodyClass!}">
-  <div class="${properties.kcLoginClass!}">
-    <div class="${properties.kcFormCardClass!} <#if displayWide>${properties.kcFormCardAccountClass!}</#if>">
+<body class="${properties.kcBodyClass!} ${properties.kcContainerClass!} ${properties.kcContentWrapperClass!}">
+  <div class="${properties.kcRegisterClass!} ${properties.kcContentClass!}">
+    <div class="${properties.kcFormCardClass!}">
       <header class="${properties.kcFormHeaderClass!}">
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
             <div id="kc-locale">
