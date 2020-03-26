@@ -1,4 +1,4 @@
-FROM alpine
+FROM jboss/keycloak:6.0.1
 
 #ENV KEYCLOAK_USER admin
 #ENV KEYCLOAK_PASSWORD admin
@@ -15,9 +15,8 @@ FROM alpine
 #RUN ./kcadm.sh update realms/master -s "accountTheme=core"
 #RUN ./kcadm.sh update realms/master -s "emailTheme=core"
 
-ADD resources /theme
-ADD resources-community /theme
-ADD resources-product /theme
-ADD package.json /theme
+ADD resources /opt/jboss/keycloak/themes/core
+ADD resources-community /opt/jboss/keycloak/themes/core
+ADD resources-product /opt/jboss/keycloak/themes/core
+ADD package.json /opt/jboss/keycloak/themes/core
 
-VOLUME /theme
