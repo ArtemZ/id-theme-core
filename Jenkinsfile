@@ -4,6 +4,10 @@ def dockerTagAndUpload(imageName) {
     sh "docker push ${env.REGISTRY_URL}/${imageName}:${tag}"
 }
 node {
+    environment {
+        HOME = '/tmp'
+        REGISTRY_URL = 'eu.gcr.io/ping-dev-254502'
+    }
     stage('Clone repo') {
         dir('build') {
             git branch: "jenkins-build", credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:ArtemZ/id-theme-core.git'
