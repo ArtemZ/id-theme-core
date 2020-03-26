@@ -6,7 +6,7 @@ def dockerTagAndUpload(imageName) {
 node {
     stage('Clone repo') {
         dir('build') {
-            git branch: "master", credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:ArtemZ/id-theme-core.git'
+            git branch: "jenkins-build", credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:ArtemZ/id-theme-core.git'
         }
     }
     stage('Build and upload image') {
