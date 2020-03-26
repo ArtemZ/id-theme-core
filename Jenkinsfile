@@ -11,7 +11,9 @@ node {
     }
     stage('Build and upload image') {
         def imageName = "keycloak-id-core-theme"
-        sh "docker build . -t ${imageName}:${env.BUILD_ID}"
+        dir('build') {
+            sh "docker build . -t ${imageName}:${env.BUILD_ID}"
+        }
         dockerTagAndUpload(imageName)
     }
 }
