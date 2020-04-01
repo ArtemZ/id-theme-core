@@ -9,9 +9,9 @@ COPY core-theme-login /tmp/core-theme-login
 COPY core-theme-account /tmp/core-theme-account
 COPY core-theme-email /tmp/core-theme-email
 
-RUN cp /tmp/core-theme-login/ /opt/jboss/keycloak/themes/keycloak/login/
-RUN cp /tmp/core-theme-account/ /opt/jboss/keycloak/themes/keycloak/account/
-RUN cp /tmp/core-theme-email/ /opt/jboss/keycloak/themes/keycloak/email/
+RUN cp -TR /tmp/core-theme-login/ /opt/jboss/keycloak/themes/keycloak/login/
+RUN cp -TR /tmp/core-theme-account/ /opt/jboss/keycloak/themes/keycloak/account/
+RUN cp -TR /tmp/core-theme-email/ /opt/jboss/keycloak/themes/keycloak/email/
 
 #COPY resources /opt/jboss/keycloak/themes/core/
 #COPY resources-community /opt/jboss/keycloak/themes/core/
