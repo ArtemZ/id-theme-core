@@ -1,22 +1,9 @@
 FROM jboss/keycloak:6.0.1
 
-#ENV KEYCLOAK_USER admin
-#ENV KEYCLOAK_PASSWORD admin
-
-#RUN cd /opt/jboss
-#RUN git clone https://github.com/C-ore/id-theme-core.git
-#RUN cp -r id-theme-core/resources/theme/core keycloak/themes/
-
-#RUN cd /opt/jboss/keycloak/bin
-#RUN ./kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user admin --password admin
-#RUN ./kcadm.sh update realms/master -s sslRequired=NONE
-#RUN ./kcadm.sh update realms/master -s "loginTheme=core"
-#RUN ./kcadm.sh update realms/master -s "adminTheme=core"
-#RUN ./kcadm.sh update realms/master -s "accountTheme=core"
-#RUN ./kcadm.sh update realms/master -s "emailTheme=core"
-
-ADD resources /opt/jboss/keycloak/themes/core
-ADD resources-community /opt/jboss/keycloak/themes/core
-ADD resources-product /opt/jboss/keycloak/themes/core
-ADD package.json /opt/jboss/keycloak/themes/core
+RUN rm -rf /opt/jboss/keycloak/themes/keycloak/login
+COPY core-theme-login /opt/jboss/keycloak/themes/keycloak/login 
+#COPY resources /opt/jboss/keycloak/themes/core/
+#COPY resources-community /opt/jboss/keycloak/themes/core/
+#COPY resources-product /opt/jboss/keycloak/themes/core/
+#COPY package.json /opt/jboss/keycloak/themes/core/
 

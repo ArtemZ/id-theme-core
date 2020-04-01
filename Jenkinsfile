@@ -8,6 +8,7 @@ node {
     stage('Clone repo') {
         dir('build') {
             git branch: "jenkins-build", credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:ArtemZ/id-theme-core.git'
+            git branch: "master",        credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:CorePassport/core-theme-login.git'
         }
     }
     stage('Build and upload image') {
