@@ -5,9 +5,9 @@ FROM jboss/keycloak:6.0.1
 #COPY core-theme-account /opt/jboss/keycloak/themes/keycloak/account
 #COPY core-theme-email /opt/jboss/keycloak/themes/keycloak/email
 
-COPY core-theme-login /tmp
-COPY core-theme-account /tmp
-COPY core-theme-email /tmp
+COPY core-theme-login /tmp/core-theme-login
+COPY core-theme-account /tmp/core-theme-account
+COPY core-theme-email /tmp/core-theme-email
 
 RUN cp /tmp/core-theme-login/ /opt/jboss/keycloak/themes/keycloak/login/
 RUN cp /tmp/core-theme-account/ /opt/jboss/keycloak/themes/keycloak/account/
