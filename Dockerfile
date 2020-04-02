@@ -13,7 +13,7 @@ FROM jboss/keycloak:6.0.1
 #RUN cp -TR /tmp/core-theme-account/ /opt/jboss/keycloak/themes/keycloak/account/
 #RUN cp -TR /tmp/core-theme-email/ /opt/jboss/keycloak/themes/keycloak/email/
 
-COPY corepassport /opt/jboss/keycloak/themes
+COPY corepassport /opt/jboss/keycloak/themes/corepassport
 
 #COPY resources /opt/jboss/keycloak/themes/core/
 #COPY resources-community /opt/jboss/keycloak/themes/core/
