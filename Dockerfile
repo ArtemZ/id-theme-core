@@ -1,4 +1,4 @@
-FROM jboss/keycloak:6.0.1
+FROM jboss/keycloak:9.0.2
 
 #RUN rm -rf /opt/jboss/keycloak/themes/keycloak/{login,account,email}
 #COPY core-theme-login /opt/jboss/keycloak/themes/keycloak/login
