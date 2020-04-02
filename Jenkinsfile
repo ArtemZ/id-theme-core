@@ -10,14 +10,8 @@ node {
             git branch: "jenkins-build", credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:ArtemZ/id-theme-core.git'
 
         }
-        dir('build/core-theme-login') {
-            git branch: "master",        credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:CorePassport/core-theme-login.git'
-        }
-        dir('build/core-theme-email') {
-            git branch: "master",        credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:CorePassport/core-theme-email.git'
-        }
-        dir('build/core-theme-account') {
-            git branch: "master",        credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:CorePassport/core-theme-account.git'
+        dir('build/corepassport') {
+            git branch: "master",        credentialsId: 	'exchange-jenkins-github-key', url: 'git@github.com:CorePassport/corepassport.git'
         }
     }
     stage('Build and upload image') {
